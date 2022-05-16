@@ -9,7 +9,7 @@ const Banner = () => {
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img
           src={chair}
-          className="max-w-xs md:max-w-lg lg:max-w-lg xl:max-w-2xl rounded-lg shadow-2xl"
+          className="w-full px-2 md:px-0 md:max-w-lg lg:max-w-lg xl:max-w-2xl rounded-lg shadow-2xl"
         />
         <div>
           <h1 className="text-3xl sm:text-5xl font-bold">Your New Smile Starts Here</h1>

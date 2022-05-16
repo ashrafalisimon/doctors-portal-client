@@ -30,7 +30,7 @@ const Services = () => {
     },
   ];
   return (
-    <div className="px-2 gap-4 md:px-12 lg:px-24 md:py-28 py-4 md:space-y-32">
+    <div className="px-2 md:px-12 lg:px-24 md:py-28 py-4 md:space-y-32">
       <div className="text-center">
         <h2 className="text-secondary font-bold text-xl">OUR SERVICES</h2>
         <p className="text-accent text-4xl">Services We Provide</p>
@@ -42,10 +42,12 @@ const Services = () => {
       </div>
       <div className="hero min-h-screen md:px-16">
         <div className="hero-content flex-col lg:flex-row md:space-x-16">
-          <img
+         <div>
+         <img
             src={treatment}
             className="max-w-xs md:max-w-lg lg:max-w-lg rounded-lg shadow-2xl"
           />
+         </div>
           <div>
             <h1 className="text-3xl sm:text-5xl font-bold">Exceptional Dental Care, on Your Terms</h1>
             <p className="py-6">
