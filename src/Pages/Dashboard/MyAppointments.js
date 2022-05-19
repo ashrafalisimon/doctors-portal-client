@@ -15,8 +15,8 @@ const MyAppointments = () => {
   return (
     <div className="w-full">
       <h1 className="text-center py-4 text-xl">My Appointments :  {appointments.length}</h1>
-      <div class="overflow-x-auto px-4">
-        <table class="table w-full ">
+      <div className="overflow-x-auto px-4">
+        <table className="table w-full ">
           {/* <!-- head --> */}
           <thead>
             <tr>

@@ -49,8 +49,8 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
       <label
-            for="my-drawer-2"
-            class="btn btn-secondary text-white drawer-button lg:hidden">Dashboard
+            htmlFor="my-drawer-2"
+            className="btn btn-secondary text-white drawer-button lg:hidden">Dashboard
           </label>
       </div>
       <div className="navbar-center hidden lg:flex navbar-end">
