@@ -4,6 +4,7 @@ import auth from "../../firebase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../Shared/Loading";
 import { Link, useNavigate } from "react-router-dom";
+import useToken from "../../hooks/useToken";
 
 const SingUp = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -17,12 +18,13 @@ const SingUp = () => {
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   let signInError;
   const navigate = useNavigate()
+  const [token] = useToken(user||gUser);
 
   if (loading || gLoading || updating) {
     return <Loading />;
   }
-  if (user || gUser) {
-    console.log(gUser);
+  if (token) {
+    navigate('/appointment');
   }
   if (gError || error || updateError) {
     signInError = (
@@ -32,15 +34,14 @@ const SingUp = () => {
     );
   }
   const onSubmit = async (data) => {
-    console.log(data);
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
     alert('Updated profile');
-    navigate('/appointment');
+   
 
   };
   return (
-    <div className="flex h-screen justify-center items-center">
+    <div className="flex mt-12 h-screen justify-center items-center">
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title justify-center text-3xl">Sing Up</h2>
