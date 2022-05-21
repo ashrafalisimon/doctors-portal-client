@@ -8,7 +8,7 @@ const Dashboard = () => {
   const [user] =useAuthState(auth);
   const [admin] = useAdmin(user);
   return (
-    <div className="mt-16 bg-green-100">
+    <div className="mt-16 bg-green-50">
       <div className="drawer drawer-mobile">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center justify-start">
@@ -32,9 +32,17 @@ const Dashboard = () => {
               <Link to="/dashboard/users">All User</Link>
             </li> */}
             {
-              admin && <li>
+              admin && <>
+                <li>
               <Link to="/dashboard/users">All User</Link>
             </li>
+            <li>
+              <Link to="/dashboard/addDoctor">Add a Doctor</Link>
+            </li>
+            <li>
+              <Link to="/dashboard/manageDoctor">Manage Doctors</Link>
+            </li>
+              </>
             }
           </ul>
         </div>

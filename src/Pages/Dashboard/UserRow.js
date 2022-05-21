@@ -18,7 +18,7 @@ const UserRow = ({ user, index, refetch }) => {
             return res.json})
         .then(data =>{
             // console.log(data);
-            if(data.modifiedCount >0){
+            if(data.modifiedCount > 0){
                 refetch();
                 toast.success('Successfully Made by Admin');
             } 
